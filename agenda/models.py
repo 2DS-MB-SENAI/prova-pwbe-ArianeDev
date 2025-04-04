@@ -10,7 +10,7 @@ class Servico(models.Model):
 
 class Agendamento(models.Model):
     servico = models.ForeignKey(Servico, on_delete=models.CASCADE)
-    duracao = models.DateTimeField()
+    data_hora = models.DateTimeField()
     cliente_nome = models.CharField(max_length=100)
     cliente_email = models.EmailField()
 
