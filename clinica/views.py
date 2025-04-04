@@ -17,4 +17,4 @@ def post_consulta(request):
     else:
         form = Forms()
 
-    return render(request, 'criar_consulta.html', {'form': form})
+    return render(request, 'forms_consulta.html', {'form': form})
