@@ -6,7 +6,7 @@ from .models import Servico, Agendamento
 from .serializer import ServicoSerializer, AgendamentoSerializer 
 
 @api_view(['GET', 'POST'])
-def get_servicos(request):
+def servicos(request):
     if request.method == 'GET':
         servicos = Servico.objects.all()
         serializer = ServicoSerializer(servicos, many = True)
@@ -33,7 +33,7 @@ def get_servico(request, pk):
     return Response(serializer.data)
 
 @api_view(['GET', 'POST'])
-def get_agendamentos(request):
+def agendamentos(request):
     if request.method == 'GET':
         agendamento = Agendamento.objects.all()
         serializer = AgendamentoSerializer(agendamento, many = True)
