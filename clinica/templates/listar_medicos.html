@@ -9,9 +9,8 @@
         <a href="{% url 'criar_consulta' %}">Criar consultas</a>
 
         <ul>
-            {% for i in consulta %}
-                <!-- <li>{Nome: {i.nome} - especialidade {i.especialidade} : {i.crm}}</li> -->
-                <li>{Nome: {i.nome}}</li>
+            {% for i in consultas %}
+                <li>{Nome: {i.nome} - especialidade {i.especialidade} : {i.crm}}</li>
             {% endfor %}
         </ul>
     </body>

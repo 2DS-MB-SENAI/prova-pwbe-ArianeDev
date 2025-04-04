@@ -14,7 +14,7 @@ STATUS_MEDICO = {
 
 class Medico(models.Model):
     nome = models.CharField(max_length=255, null=False, blank=False)
-    especialidade = models.CharField(max_length=255, choices=ESPECIALIDADE_CHOICES, null=False, blank=False)
+    especialidade = models.CharField(max_length=255, choices=ESPECIALIDADE_CHOICES)
     crm = models.CharField(max_length=255, unique=True, null=False, blank=False)
     email = models.EmailField(max_length=255, null=True, blank=True)
 
@@ -26,3 +26,6 @@ class Consulta(models.Model):
     data = models.DateTimeField()
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
     status = models.CharField(max_length=255, choices=STATUS_MEDICO)
+
+    def __str__(self):
+        return self.paciente
